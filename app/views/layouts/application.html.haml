@@ -2,16 +2,14 @@
 
 %html{lang: 'en'}
   %head
-    %title= @title || "EjayCanaria.com"
+    %title= @title || "Welcome to My Website!"
     = stylesheet_link_tag :application
 
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }/
 
   %body
     .container-fluid
-      .row
-        .col-md-12
-      .row
-        .col-md-6
+      = render 'layout_partials/application/header'
+      .row.content-wrapper
+        .col-xs-12
           = yield
-        .col-md-6

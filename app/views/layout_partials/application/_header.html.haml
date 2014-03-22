@@ -1,0 +1,21 @@
+.row.header
+  .col-xs-2.ml30
+  .col-xs-1
+    %a{href: "#{blog_index_path}"}
+      .header-btn.header-link Blog
+  .col-xs-2
+    %a{href: "#{photographs_path}"}
+      .header-btn.header-link Photograph
+  .col-xs-1
+    %a{href: "#{root_path}"}
+      .header-logo.header-link
+        %img{src: "#{image_path('ejay-logo.png')}"}
+  .col-xs-2
+    %a{href: "#{portfolios_path}"}
+      .header-btn.header-link
+        Portfolio
+  .col-xs-1
+    %a{href: "#{about_path}"}
+      .header-btn.header-link
+        About
+  .col-xs-3

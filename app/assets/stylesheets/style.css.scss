@@ -1,1 +1,58 @@
 @import 'bootstrap';
+
+/*----------- CONSTANTS -------------*/
+$header-color: #333;
+$header-height: 60px;
+
+/*---------- HTML -----------*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*--------- CLASSES and IDs ---------*/
+
+//HEADER
+.header {
+    background-color: $header-color;
+    height: $header-height;
+}
+
+.header a {
+    text-decoration: none;
+}
+
+.header a:hover {
+    text-decoration: none;
+}
+
+.header-logo {
+    line-height: $header-height;
+    text-align: center;
+    margin: 0 auto;
+    background-color: $header-color;
+}
+.header-link:hover {
+    background-color: #222;
+    cursor: pointer;
+}
+
+.header-link:active {
+    background-color: #1A1A1A;
+    cursor: pointer;
+}
+
+.header-btn {
+    color: #CCC;
+    line-height: $header-height;
+    text-align: center;
+    font-family: 'Century Gothic';
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: $header-color;
+}
+
+//CONTENT WRAPPER
+.content-wrapper {
+    margin: 0 10%;
+}
