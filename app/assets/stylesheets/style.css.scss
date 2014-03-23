@@ -5,12 +5,16 @@ $header-color: #333;
 $header-height: 60px;
 $header-logo-widht: 60px;
 
+$footer-height: 40px;
+
 $font-color-main: #777;
 
 $font-color-header: #716659;
+$font-color-subheader: #C2B49A;
 
 $font-color-link-hover: #47413A;
 $font-color-link: #716659;
+
 
 /*---------- HTML -----------*/
 html, body, .content-wrapper {
@@ -93,22 +97,32 @@ html, body {
 //CONTENT WRAPPER
 .content-wrapper {
     margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: $footer-height + 20px;
     text-align: center;
 }
 
 .content-wrapper h1 {
     color: $font-color-header;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+
+.content-wrapper > .brief-description {
+    font-family: "Palatino Linotype",Palatino,Palladio,"URW Palladio L","Book Antiqua",Baskerville,"Bookman Old Style","Bitstream Charter","Nimbus Roman No9 L",Garamond,"Apple Garamond","ITC Garamond Narrow","New Century Schoolbook","Century Schoolbook","Century Schoolbook L",Georgia,serif;
+    font-size: 1.5em;
+    color: $font-color-subheader;
 }
 
 //FOOTER
 .footer {
-    height: 40px;
+    height: $footer-height;
     background-color: #FFF;
     border: none;
 }
 
 .nav-footer {
-    line-height: 20px;
+    line-height: $footer-height / 2;
     text-align: center;
 }
 
@@ -117,7 +131,6 @@ html, body {
 }
 
 .nav-footer a {
-    height: 40px;
     color: #888;
     font-size: 12px;
 }
