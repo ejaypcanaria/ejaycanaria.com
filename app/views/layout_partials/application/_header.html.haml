@@ -1,21 +1,29 @@
-.row.header
-  .col-xs-2.ml30
-  .col-xs-1
-    %a{href: "#{blog_index_path}"}
-      .header-btn.header-link Blog
-  .col-xs-2
-    %a{href: "#{photographs_path}"}
-      .header-btn.header-link Photograph
-  .col-xs-1
-    %a{href: "#{root_path}"}
-      .header-logo.header-link
-        %img{src: "#{image_path('ejay-logo.png')}"}
-  .col-xs-2
-    %a{href: "#{portfolios_path}"}
-      .header-btn.header-link
-        Portfolio
-  .col-xs-1
-    %a{href: "#{about_path}"}
-      .header-btn.header-link
-        About
-  .col-xs-3
+.row
+  .col-xs-12
+    %header
+      %nav{role: 'navigation', class: 'navbar navbar-default header'}
+        .container-fluid
+          .navbar-header
+            %button{type: 'button', class: 'navbar-toggle', data: {toggle: 'collapse', target: '#header-nav'} }
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a{href: "#{root_path}", class: 'header-link header-logo'}
+              %img{src: "#{image_path('ejay-logo.png')}"}
+.row
+  .col-xs-12
+    %div{class: 'collapse navbar-collapse', id: 'header-nav'}
+      %ul.nav.nav-justified
+        %li
+          %a{href: "#{blog_index_path}", class: 'header-btn'}
+            Blog
+        %li
+          %a{href: "#{photographs_path}", class: 'header-btn'}
+            Photograph
+        %li
+          %a{href: "#{about_path}", class: 'header-btn'}
+            Manifesto
+        %li
+          %a{href: "#{about_path}", class: 'header-btn'}
+            About

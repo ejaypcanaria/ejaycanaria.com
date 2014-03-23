@@ -4,12 +4,17 @@
   %head
     %title= @title || "Welcome to My Website!"
     = stylesheet_link_tag :application
+    = javascript_include_tag :application
+    = csrf_meta_tags
 
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }/
 
   %body
-    .container-fluid
+    .container.full-width.no-padding
       = render 'layout_partials/application/header'
-      .row.content-wrapper
+      .row
         .col-xs-12
-          = yield
+          .content-wrapper
+            = yield
+      .row
+        = render 'layout_partials/application/footer'

@@ -3,11 +3,16 @@
 /*----------- CONSTANTS -------------*/
 $header-color: #333;
 $header-height: 60px;
+$header-logo-widht: 60px;
 
 /*---------- HTML -----------*/
-body {
+html, body, .content-wrapper {
     margin: 0;
     padding: 0;
+}
+
+html, body {
+    height: 100%;
 }
 
 /*--------- CLASSES and IDs ---------*/
@@ -16,10 +21,14 @@ body {
 .header {
     background-color: $header-color;
     height: $header-height;
+    border-radius: 0;
+    border: 0;
+    z-index: 999;
 }
 
 .header a {
     text-decoration: none;
+    font-family: "Century Gothic", Helvetica, Arial, sans-serif;
 }
 
 .header a:hover {
@@ -27,11 +36,35 @@ body {
 }
 
 .header-logo {
+    display: block;
+    width: $header-logo-widht;
+    height: $header-height;
     line-height: $header-height;
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
     text-align: center;
-    margin: 0 auto;
     background-color: $header-color;
 }
+
+#header-nav {
+    //background-color: $header-color;
+}
+
+#header-nav a.header-btn {
+    text-align: center;
+    color: #777;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#header-nav a.header-btn:hover {
+    background: none;
+    color: #222;
+}
+
+#header-nav a.header-btn:active {}
+
 .header-link:hover {
     background-color: #222;
     cursor: pointer;
@@ -42,17 +75,6 @@ body {
     cursor: pointer;
 }
 
-.header-btn {
-    color: #CCC;
-    line-height: $header-height;
-    text-align: center;
-    font-family: 'Century Gothic';
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    background-color: $header-color;
-}
-
 //CONTENT WRAPPER
 .content-wrapper {
-    margin: 0 10%;
 }
