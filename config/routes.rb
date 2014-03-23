@@ -11,6 +11,8 @@ EjaycanariaCom::Application.routes.draw do
   resources :manifesto, only: [:index] do
   end
 
+  devise_for :users, path: ADMIN_ENGINE_PATH, path_names: {sign_in: 'login', sign_out: 'logout'}
+
 
   get "about", as: 'about', to: 'about#index'
 
