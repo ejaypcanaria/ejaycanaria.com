@@ -12,9 +12,9 @@
   %body
     .container.full-width.no-padding
       = render 'layout_partials/application/header'
+    .container.content-wrapper
       .row
         .col-xs-12
-          .content-wrapper
-            = yield
-      .row
-        = render 'layout_partials/application/footer'
+          = yield
+    .container
+      = render 'layout_partials/application/footer'

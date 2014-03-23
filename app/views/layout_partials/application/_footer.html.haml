@@ -1,7 +1,11 @@
-%footer
-  %nav{class: 'navbar', role: 'navigation'}
-    .container
-      .row
-        .col-xs-12
-
+.row
+  .col-xs-12
+    %footer
+      %nav{class: 'nav navbar-default navbar-fixed-bottom footer', role: 'navigation'}
+        .container.border-top-grey
+          %ul.nav.nav-footer
+            %li
+              %a{href: '#'}
+                %img{src: "#{image_path('github-icon.png')}", width: '20px'}
+                Fork this on Github
 

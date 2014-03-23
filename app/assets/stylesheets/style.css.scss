@@ -47,8 +47,8 @@ html, body {
     background-color: $header-color;
 }
 
-#header-nav {
-    //background-color: $header-color;
+#header-nav ul {
+    margin-top: 70px;
 }
 
 #header-nav a.header-btn {
@@ -77,4 +77,32 @@ html, body {
 
 //CONTENT WRAPPER
 .content-wrapper {
+    margin: 0 auto;
+}
+
+//FOOTER
+.footer {
+    height: 40px;
+    background-color: #FFF;
+    border: none;
+}
+
+ul.nav-footer {
+    line-height: 20px;
+    text-align: center;
+}
+
+ul.nav-footer li {
+    display: inline-block;
+}
+
+ul.nav-footer a {
+    height: 40px;
+    color: #888;
+    font-size: 12px;
+}
+
+ul.nav-footer a:hover {
+    background: none;
+    color: #333;
 }
