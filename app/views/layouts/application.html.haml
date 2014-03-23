@@ -2,7 +2,7 @@
 
 %html{lang: 'en'}
   %head
-    %title= @title || "Welcome to My Website!"
+    %title= (yield :title) || "Welcome to My Website!"
     = stylesheet_link_tag :application
     = javascript_include_tag :application
     = csrf_meta_tags
