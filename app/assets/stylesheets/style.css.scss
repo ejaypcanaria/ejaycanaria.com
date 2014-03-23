@@ -5,10 +5,18 @@ $header-color: #333;
 $header-height: 60px;
 $header-logo-widht: 60px;
 
+$font-color-main: #777;
+
+$font-color-header: #716659;
+
+$font-color-link-hover: #47413A;
+$font-color-link: #716659;
+
 /*---------- HTML -----------*/
 html, body, .content-wrapper {
     margin: 0;
     padding: 0;
+    color: $font-color-main;
 }
 
 html, body {
@@ -53,17 +61,24 @@ html, body {
 
 #header-nav a.header-btn {
     text-align: center;
-    color: #777;
+    color: $font-color-link;
     letter-spacing: 2px;
     text-transform: uppercase;
+    border-bottom: 2px #FFF solid;
+    border-top: 2px #FFF solid;
 }
 
 #header-nav a.header-btn:hover {
     background: none;
-    color: #222;
+    color: $font-color-link-hover;
+    border-bottom-color: $font-color-header;
+    border-top-color: $font-color-header;
 }
 
-#header-nav a.header-btn:active {}
+#header-nav a.header-btn:active {
+    position: relative;
+    top: 1px;
+}
 
 .header-link:hover {
     background-color: #222;
@@ -78,6 +93,11 @@ html, body {
 //CONTENT WRAPPER
 .content-wrapper {
     margin: 0 auto;
+    text-align: center;
+}
+
+.content-wrapper h1 {
+    color: $font-color-header;
 }
 
 //FOOTER
@@ -87,16 +107,16 @@ html, body {
     border: none;
 }
 
-ul.nav-footer {
+.nav-footer {
     line-height: 20px;
     text-align: center;
 }
 
-ul.nav-footer li {
+.nav-footer li {
     display: inline-block;
 }
 
-ul.nav-footer a {
+.nav-footer a {
     height: 40px;
     color: #888;
     font-size: 12px;
