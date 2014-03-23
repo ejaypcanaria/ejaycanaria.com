@@ -15,3 +15,5 @@
 /log/*.log
 /tmp
 /config/database.yml
+/config/initializers/environment_variables.rb
+/engines/admin/test

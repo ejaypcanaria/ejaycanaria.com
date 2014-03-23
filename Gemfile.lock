@@ -1,3 +1,9 @@
+PATH
+  remote: engines/admin
+  specs:
+    admin (0.0.1)
+      rails (~> 4.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -156,6 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  admin!
   better_errors
   bootstrap-sass (~> 3.1.1)
   capybara

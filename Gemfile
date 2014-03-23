@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Engines
+gem 'admin', path: 'engines/admin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
