@@ -1,3 +1,5 @@
 Admin::Engine.routes.draw do
-  get "admin/index"
+  resources :admin, path: '/', only: [:index] do
+
+  end
 end
