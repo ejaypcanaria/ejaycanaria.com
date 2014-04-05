@@ -21,7 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-
+gem 'capistrano'
+gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
+gem 'unicorn'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
