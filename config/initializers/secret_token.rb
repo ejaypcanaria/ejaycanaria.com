@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-EjaycanariaCom::Application.config.secret_key_base = 'PUT YOUR SECRET KEY HERE'
+EjaycanariaCom::Application.config.secret_key_base = SECRET_KEY_BASE
