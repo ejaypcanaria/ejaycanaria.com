@@ -22,6 +22,9 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'capistrano'
+gem 'capistrano-rvm'
+gem 'capistrano-bundler', '~> 1.1.2'
+
 gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 gem 'unicorn'
 
