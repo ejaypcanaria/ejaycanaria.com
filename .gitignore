@@ -16,6 +16,8 @@
 /tmp
 /config/database.yml
 /config/initializers/environment_variables.rb
-/config/initializers/secret_token.rb
 /engines/admin/test
+/config/deploy
+/config/deploy.rb
+/config/application.yml
 

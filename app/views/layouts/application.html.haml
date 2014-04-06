@@ -14,7 +14,7 @@
 
   %body
     .container.no-padding
-      = render 'layout_partials/application/header'
+      = #render 'layout_partials/application/header'
       .row
         %p.notice= notice
         %p.alert= alert
@@ -23,4 +23,4 @@
           .container
             .content-wrapper
               = yield
-      = render 'layout_partials/application/footer'
+      = #render 'layout_partials/application/footer'
