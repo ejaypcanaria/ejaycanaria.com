@@ -21,11 +21,6 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'capistrano'
-gem 'capistrano-rvm'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1'
-
 gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 gem 'unicorn'
 
@@ -49,6 +44,8 @@ end
 
 group :development do
   gem "better_errors"
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 group :test do
