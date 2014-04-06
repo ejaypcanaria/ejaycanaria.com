@@ -1,20 +1,19 @@
 EjaycanariaCom::Application.routes.draw do
 
-  # mount Admin::Engine, at: ADMIN_ENGINE_PATH
+  mount Admin::Engine, at: ADMIN_ENGINE_PATH
 
-  # resources :blog, only: [:index] do
-  # end
+  resources :blog, only: [:index] do
+  end
 
-  # resources :photographs, only: [:index] do
-  # end
+  resources :photographs, only: [:index] do
+  end
 
-  # resources :manifesto, only: [:index] do
-  # end
+  resources :manifesto, only: [:index] do
+  end
 
   devise_for :users, path: ADMIN_ENGINE_PATH, path_names: {sign_in: 'login', sign_out: 'logout'}
 
-
-  # get "about", as: 'about', to: 'about#index'
+  get "about", as: 'about', to: 'about#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

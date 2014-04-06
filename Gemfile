@@ -42,8 +42,9 @@ end
 
 group :development do
   gem "better_errors"
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
+  gem "capistrano-rails"
+  gem "capistrano-rvm"
+  gem "guard-rspec", require: false
 end
 
 group :test do

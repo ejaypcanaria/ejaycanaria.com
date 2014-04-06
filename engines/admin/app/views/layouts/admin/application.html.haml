@@ -7,4 +7,12 @@
   = csrf_meta_tags
 
 %body
-  = yield
+  .container.reset-container
+    .row
+      .col-xs-12
+        - if alert || notice
+          %p.alert.bg-warning= alert
+          %p.notice.bg-warning= notice
+    .row
+      .col-xs-12
+        = yield
