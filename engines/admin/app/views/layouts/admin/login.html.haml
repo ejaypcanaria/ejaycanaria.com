@@ -8,12 +8,12 @@
 
   %body
     .container.reset-container
-      .row
-        .col-xs-12
+      .row-fluid
+        .col-xs-12-fluid
           - if alert
             %p.alert.bg-warning= alert
           - if notice
             %p.notice.bg-success= notice
-      .row
-        .col-xs-12
+      .row-fluid
+        .col-xs-12-fluid
           = yield

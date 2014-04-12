@@ -15,6 +15,5 @@
       .checkbox
         = f.label :remember_me
         = f.check_box :remember_me
-    .row
-      .col-xs-12
-        = f.submit "Sign in", class: 'btn btn-default'
+    .form-group
+      = f.submit "Sign in", class: 'btn btn-default'

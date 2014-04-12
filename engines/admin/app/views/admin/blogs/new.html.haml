@@ -1,0 +1,13 @@
+#blog-main-area
+  %h2 Create New Blog
+  = form_for @blog, url: {action: :create}, html: {role: 'form'} do |f|
+    = f.hidden_field :user_id, value: @blog.user_id
+    .form-group
+      = f.label :title
+      = f.text_field :title, class: 'form-control'
+
+    .form-group
+      = f.label :contents
+      = f.text_area :contents, class: 'form-control', rows: "15"
+    .form-group
+      = f.submit "Save Draft", class: 'btn btn-default'

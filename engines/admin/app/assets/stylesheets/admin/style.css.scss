@@ -5,6 +5,9 @@
     padding: 0;
 }
 
+.main-area {
+    padding: 20px;
+}
 
 .reset-container { padding: 0; margin: 0; width: 100%;}
 p.notice, p.alert {
@@ -13,6 +16,8 @@ p.notice, p.alert {
     margin: 0 !important;
     text-align: center;
     font-size: 1.3em;
+    margin: 0;
+    width: 100%;
 }
 
 p.alert {

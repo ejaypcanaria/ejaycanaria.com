@@ -11,6 +11,11 @@ describe Blog do
     Blog.set_callback(:validation, :before, :generate_permalink)
   end
 
+  it "is not valid without status" do
+    invalid_blog = build(:blog, status: nil)
+    expect(invalid_blog).to have_at_least(1).errors_on(:status)
+  end
+
   it "validates the maximum lenght of permalink is 500" do
     too_long_title = (1..501).map{ "a" }.join("")
     long_titled_blog = build(:blog, title: too_long_title)
