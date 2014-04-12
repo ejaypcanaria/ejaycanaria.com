@@ -22,3 +22,10 @@ p.alert {
 p.notice {
     color: #16A085;
 }
+
+nav.left-nav {
+    border-right: 1px solid #EEE;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+}

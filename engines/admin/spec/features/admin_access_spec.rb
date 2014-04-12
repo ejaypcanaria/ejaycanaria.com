@@ -1,13 +1,12 @@
 require 'spec_helper'
 
-describe "Admin Page" do
+describe "Admin Access" do
   context "when not logged in" do
     it "redirects to admin login page" do
       visit ADMIN_ENGINE_PATH
       expect(page.current_path).to eq "/#{ADMIN_ENGINE_PATH}/login"
     end
   end
-
 
   describe "Sign in" do
     context "when user is invalid" do
@@ -29,12 +28,27 @@ describe "Admin Page" do
 
   describe "Sign out" do
     context "when user is signed in" do
-      it "logs out the current user" do
+      it "signs out the current user" do
         valid_user = create(:user)
         sign_in_with(valid_user.email, valid_user.password)
         click_link "Logout"
 
         expect(page.current_path).to eq "/#{ADMIN_ENGINE_PATH}/login"
+      end
+    end
+  end
+
+  describe "Admin Page" do
+    before(:each) do
+      user = create(:user)
+      sign_in_with user.email, user.password
+    end
+
+    context "when signed in" do
+      it "has a link to blog" do
+        within(:css, "nav.left-nav") do
+          expect(page).to have_link "Blog"
+        end
       end
     end
   end

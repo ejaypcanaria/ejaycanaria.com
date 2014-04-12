@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323113942) do
+ActiveRecord::Schema.define(version: 20140412062343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blogs", force: true do |t|
+    t.string   "title"
+    t.text     "contents"
+    t.string   "permalink",    limit: 500
+    t.string   "status"
+    t.datetime "published_at"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blogs", ["permalink"], name: "index_blogs_on_permalink", unique: true, using: :btree
+  add_index "blogs", ["user_id", "status"], name: "index_blogs_on_user_id_and_status", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -29,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140323113942) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
