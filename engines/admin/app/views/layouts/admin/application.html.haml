@@ -1,18 +1,19 @@
 !!! 5
 %html{lang: 'en'}
-%head
-  %title= yield :title
-  = stylesheet_link_tag    "admin/application", media: "all"
-  = javascript_include_tag "admin/application"
-  = csrf_meta_tags
+  %head
+    %title= yield :title
+    = stylesheet_link_tag    "admin/application", media: "all"
+    = javascript_include_tag "admin/application"
+    = csrf_meta_tags
 
-%body
-  .container.reset-container
-    .row
-      .col-xs-12
-        - if alert || notice
-          %p.alert.bg-warning= alert
-          %p.notice.bg-warning= notice
-    .row
-      .col-xs-12
-        = yield
+  %body
+    .container.reset-container
+      .row
+        .col-xs-12
+          - if alert
+            %p.alert.bg-warning= alert
+          - if notice
+            %p.notice.bg-success= notice
+      .row
+        .col-xs-12
+          = yield

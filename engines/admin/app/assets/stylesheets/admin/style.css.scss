@@ -7,8 +7,18 @@
 
 
 .reset-container { padding: 0; margin: 0; width: 100%;}
-p.notify, p.alert {
+p.notice, p.alert {
     border-radius: 0;
+    padding: 20px;
     margin: 0 !important;
     text-align: center;
+    font-size: 1.3em;
+}
+
+p.alert {
+    color: #F7CA18;
+}
+
+p.notice {
+    color: #16A085;
 }

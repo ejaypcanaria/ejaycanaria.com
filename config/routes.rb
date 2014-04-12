@@ -1,6 +1,6 @@
 EjaycanariaCom::Application.routes.draw do
 
-  mount Admin::Engine, at: ADMIN_ENGINE_PATH
+  mount Admin::Engine, at: ADMIN_ENGINE_PATH, as: :admin_app
 
   resources :blog, only: [:index] do
   end
