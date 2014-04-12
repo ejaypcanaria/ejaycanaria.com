@@ -7,6 +7,8 @@ class Blog < ActiveRecord::Base
   validates :title, presence: true
   validates :permalink, presence: true, length: {maximum: 500}
 
+  # Associations
+  belongs_to :user
 
   private
 

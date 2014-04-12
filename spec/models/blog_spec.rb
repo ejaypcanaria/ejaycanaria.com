@@ -22,4 +22,9 @@ describe Blog do
     expect(blog.permalink).to eq blog.title.parameterize
   end
 
+  it "belongs to a user" do
+    blog = create(:blog)
+    expect(blog).to belong_to(:user)
+  end
+
 end

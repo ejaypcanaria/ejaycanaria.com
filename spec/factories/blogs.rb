@@ -1,8 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :blog do
-
+    user
     sequence(:title) {|i| "Blog #{i}"}
     sequence(:permalink) {|i| "blog-#{i}"}
     contents "TL;DR;"
