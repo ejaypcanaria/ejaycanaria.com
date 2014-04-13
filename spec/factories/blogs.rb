@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :blog do
-    user
+    author factory: :user
     sequence(:title) {|i| "Blog #{i}"}
     sequence(:permalink) {|i| "blog-#{i}"}
     contents "TL;DR;"

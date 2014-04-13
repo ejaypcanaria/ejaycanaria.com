@@ -1,6 +1,6 @@
 #blog-main-area
   %h2 Create New Blog
-  = form_for @blog, url: {action: :create}, html: {role: 'form'} do |f|
+  = form_for @blog, url: {action: :create}, html: {role: 'form'}, remote: true do |f|
     = f.hidden_field :user_id, value: @blog.user_id
     .form-group
       = f.label :title

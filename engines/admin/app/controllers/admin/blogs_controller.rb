@@ -1,6 +1,10 @@
 module Admin
   class BlogsController < ApplicationController
 
+    def index
+      @blogs = Blog.all
+    end
+
     def new
       @blog = current_user.blogs.new
     end
@@ -10,7 +14,8 @@ module Admin
       blog.status = "drafted"
       blog.save!
 
-      redirect_to blog_path(blog.id)
+    rescue
+      render :create_error
     end
 
     def show

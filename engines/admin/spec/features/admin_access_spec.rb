@@ -46,7 +46,7 @@ describe "Admin Access" do
 
     context "when signed in" do
       it "has a link to blog" do
-        within(:css, "nav.left-nav") do
+        within(:css, ".left-nav") do
           expect(page).to have_link "Blog"
         end
       end

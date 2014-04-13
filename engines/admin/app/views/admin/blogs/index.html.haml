@@ -1,1 +1,22 @@
 #blog-main-area
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th Title
+        %th Contents
+        %th Status
+        %th Created At
+        %th Author
+        %th Action
+    %tbody
+      - @blogs.each do |blog|
+        %tr
+          %td= blog.title
+          %td= blog.contents
+          %td= blog.status
+          %td= blog.created_at
+          %td= blog.author.name
+          %td
+            = link_to "Show", admin_app.blog_path(blog)
+            |
+            = link_to "Delete", admin_app.blog_path(blog), data: {method: 'delete'}
