@@ -10,7 +10,7 @@
         %th Action
     %tbody
       - @blogs.each do |blog|
-        %tr
+        %tr{id: "blog-#{blog.id}"}
           %td= blog.title
           %td= blog.contents
           %td= blog.status
@@ -19,4 +19,4 @@
           %td
             = link_to "Show", admin_app.blog_path(blog)
             |
-            = link_to "Delete", admin_app.blog_path(blog), data: {method: 'delete'}
+            = link_to "Delete", admin_app.blog_path(blog), method: 'delete', remote: true

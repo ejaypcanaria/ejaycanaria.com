@@ -22,6 +22,12 @@ describe Blog do
     expect(long_titled_blog).to have_at_least(1).errors_on(:permalink)
   end
 
+  it "validates uniqueness of permalink" do
+    create(:blog, title: "Blog")
+    blog = build(:blog, title: "Blog")
+    expect(blog).to have_at_least(1).errors_on(:permalink)
+  end
+
   it "generates a permalink based on title" do
     blog = create(:blog, title: "This is a sample blog")
     expect(blog.permalink).to eq blog.title.parameterize
@@ -29,7 +35,7 @@ describe Blog do
 
   it "belongs to a user" do
     blog = create(:blog)
-    expect(blog).to belong_to(:user)
+    expect(blog).to belong_to(:author)
   end
 
 end

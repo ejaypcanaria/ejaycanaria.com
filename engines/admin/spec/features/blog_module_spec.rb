@@ -3,6 +3,7 @@ describe "Admin Blog Module" do
   before(:each) do
     user = create(:user)
     sign_in_with user.email, user.password
+    create(:blog, title: "This is a sample blog")
     click_link "Blog"
   end
 
@@ -25,11 +26,6 @@ describe "Admin Blog Module" do
   end
 
   describe "index page" do
-    before(:each) do
-      create(:blog, title: "This is a sample blog")
-      click_link "Blog"
-    end
-
     it "shows all the blogs" do
       within(:css, "table.table") do
         expect(page).to have_content("This is a sample blog")
@@ -49,6 +45,15 @@ describe "Admin Blog Module" do
     end
   end
 
+  # FIXME: HTML response is trigerred in capybara!
+  # describe "delete function" do
+  #   it "deletes a blog" do
+  #     within(:css, "table.table") do
+  #       page.click_link("Delete")
+  #       expect(page).to_not have_link("Delete")
+  #     end
+  #   end
+  # end
 
   #FIXME: Put this on a support file
   private

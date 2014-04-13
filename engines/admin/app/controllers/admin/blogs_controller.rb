@@ -14,16 +14,23 @@ module Admin
       blog.status = "drafted"
       blog.save!
 
-    rescue
-      render :create_error
+    rescue ActiveRecord::RecordInvalid => e
+      @error = e
+      render :blog_error, error: e
     end
 
     def show
       @blog = Blog.find(params[:id])
     end
 
+    def destroy
+      @blog = Blog.find params[:id]
+      @blog.destroy!
 
-
+    rescue ActiveRecord::RecordInvalid => e
+      @error = e
+      render :blog_error
+    end
 
     private
 
