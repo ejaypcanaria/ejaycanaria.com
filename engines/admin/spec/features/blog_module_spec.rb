@@ -26,13 +26,13 @@ describe "Admin Blog Module" do
 
   describe "index page" do
     before(:each) do
-      create_list(:blog, 5)
+      create(:blog, title: "This is a sample blog")
       click_link "Blog"
     end
 
     it "shows all the blogs" do
       within(:css, "table.table") do
-        expect(page).to have_content("Blog 5")
+        expect(page).to have_content("This is a sample blog")
       end
     end
 
