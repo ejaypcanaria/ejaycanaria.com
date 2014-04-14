@@ -52,14 +52,4 @@ describe "Admin Access" do
       end
     end
   end
-
-
-  #FIXME: Put this on a support file
-  private
-  def sign_in_with(email, password)
-    visit "/#{ADMIN_ENGINE_PATH}/login"
-    fill_in :user_email, with: email
-    fill_in :user_password, with: password
-    click_button "Sign in"
-  end
 end
