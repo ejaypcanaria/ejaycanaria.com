@@ -29,7 +29,7 @@ module Admin
 
     rescue ActiveRecord::RecordInvalid => e
       @error = e
-      render :blog_error
+      render :blog_error, error: e
     end
 
     private

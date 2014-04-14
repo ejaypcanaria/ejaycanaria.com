@@ -45,15 +45,14 @@ describe "Admin Blog Module" do
     end
   end
 
-  # FIXME: HTML response is trigerred in capybara!
-  # describe "delete function" do
-  #   it "deletes a blog" do
-  #     within(:css, "table.table") do
-  #       page.click_link("Delete")
-  #       expect(page).to_not have_link("Delete")
-  #     end
-  #   end
-  # end
+  describe "delete function", js: true do
+    it "deletes a blog" do
+      within(:css, "table.table") do
+        page.click_link("Delete")
+        expect(page).to_not have_link("Delete")
+      end
+    end
+  end
 
   #FIXME: Put this on a support file
   private
