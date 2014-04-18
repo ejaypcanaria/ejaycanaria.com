@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe Blog do
 
+  it { should have_many :model_tags }
+  it { should have_many :tags }
+
   it "is not valid without title" do
     Blog.skip_callback(:validation, :before, :generate_permalink)
 
