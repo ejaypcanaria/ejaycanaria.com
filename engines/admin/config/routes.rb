@@ -4,4 +4,7 @@ Admin::Engine.routes.draw do
   resources :blogs do
 
   end
+
+  get "tags/all", as: :get_all_tags, to: "tags#get_all_tags"
+
 end

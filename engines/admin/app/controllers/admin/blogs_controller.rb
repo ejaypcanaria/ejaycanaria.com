@@ -10,6 +10,7 @@ module Admin
     end
 
     def create
+      logger.debug "#{params}"
       @blog = Blog.new blog_params
       @blog.status = "drafted"
       @blog.save!
