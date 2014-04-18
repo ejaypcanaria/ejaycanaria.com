@@ -20,7 +20,7 @@ Capybara.register_driver :chrome do |app|
 end
 
 #Capybara.current_driver = :chrome
-Capybara.javascript_driver = :chrome
+Capybara.javascript_driver = :webkit
 
 
 # Checks for pending migrations before tests are run.
