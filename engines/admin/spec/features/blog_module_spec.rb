@@ -23,12 +23,26 @@ describe "Admin Blog Module" do
         end
       end
     end
+
+    describe "create blog page", js:true do
+      it "creates a new blog record" do
+        within(:css, "#blog-header") do
+          click_link "Create"
+        end
+
+        fill_in :blog_title, with: "This is a sample blog"
+        fill_in :blog_contents, with: "This is a sample content"
+        click_button "Save Draft"
+
+        expect(page).to have_content "Blog successfully created."
+      end
+    end
   end
 
   describe "index page" do
     it "shows all the blogs" do
       within(:css, "table.table") do
-        expect(page).to have_content("This is a sample blog")
+        expect(page).to have_content("This is a sample blog".titleize)
       end
     end
 

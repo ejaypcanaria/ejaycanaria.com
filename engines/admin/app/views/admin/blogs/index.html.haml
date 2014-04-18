@@ -3,6 +3,7 @@
     %thead
       %tr
         %th Title
+        %th Permalink
         %th Contents
         %th Status
         %th Created At
@@ -12,6 +13,7 @@
       - @blogs.each do |blog|
         %tr{id: "blog-#{blog.id}"}
           %td= blog.title
+          %td= blog.permalink
           %td= blog.contents
           %td= blog.status
           %td= blog.created_at
