@@ -14,6 +14,10 @@
             %p.alert.bg-warning= alert
           - if notice
             %p.notice.bg-success= notice
+          - if flash[:success]
+            %p.notice.bg-success= flash[:success]
+          - if flash[:error]
+            %p.alert.bg-warning= flash[:error]
       .row-fluid
         .col-xs-2
           = render 'layout_partials/application/side_bar'

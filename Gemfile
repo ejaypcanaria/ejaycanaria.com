@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
+gem 'net-ssh', '~> 2.8.1', :git => 'https://github.com/net-ssh/net-ssh'
 gem 'unicorn'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -30,29 +30,30 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem "devise"
-gem "haml", ">= 3.0.0"
-gem "haml-rails"
-gem "jquery-rails"
+gem 'devise'
+gem 'haml', '>= 3.0.0'
+gem 'haml-rails'
+gem 'jquery-rails'
+gem 'simple_form'
 
 group :development, :test do
-  gem "rspec-rails", ">= 2.0.1"
-  gem "factory_girl_rails", "~> 4.2.1"
-  gem "selenium-webdriver"
-  gem "capybara-webkit"
+  gem 'rspec-rails', '>= 2.0.1'
+  gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
 end
 
 group :development do
-  gem "better_errors"
-  gem "capistrano-rails"
-  gem "capistrano-rvm"
-  gem "guard-rspec", require: false
+  gem 'better_errors'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
+  gem 'guard-rspec', require: false
 end
 
 group :test do
-  gem "faker", "~> 1.1.2"
-  gem "capybara"
-  gem "database_cleaner", "~> 0.9.1"
-  gem "launchy", "~> 2.2.0"
-  gem "shoulda"
+  gem 'faker', '~> 1.1.2'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'launchy', '~> 2.2.0'
+  gem 'shoulda'
 end

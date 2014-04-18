@@ -1,13 +1,14 @@
-describe "Admin Blog Module" do
+feature "Admin Blog Module" do
 
   before(:each) do
     user = create(:user)
     sign_in_with user.email, user.password
     create(:blog, title: "This is a sample blog")
-    click_link "Blog"
+
+    click_on "Blog"
   end
 
-  describe "create function" do
+  describe "create functionality" do
 
     it "has a create link" do
       within(:css, "#blog-header") do
@@ -24,7 +25,7 @@ describe "Admin Blog Module" do
       end
     end
 
-    describe "create blog page", js:true do
+    describe "create blog page" do
       it "creates a new blog record" do
         within(:css, "#blog-header") do
           click_link "Create"
@@ -39,6 +40,12 @@ describe "Admin Blog Module" do
     end
   end
 
+  # describe "update functionality", js: true do
+  #   it "has a save button" do
+
+  #   end
+  # end
+
   describe "index page" do
     it "shows all the blogs" do
       within(:css, "table.table") do
@@ -48,18 +55,18 @@ describe "Admin Blog Module" do
 
     it "has a link to show every blog record" do
       within(:css, "table.table") do
-        expect(page.first(:link, "Show")[:href]).to eq admin_app.blog_path(1)
+        expect(page.first(:link, "Show")[:href]).to eq admin_app.blog_path(Blog.last.id)
       end
     end
 
     it "has a link to delete every blog record" do
       within(:css, "table.table") do
-        expect(page.first(:link, "Delete")[:href]).to eq admin_app.blog_path(1)
+        expect(page.first(:link, "Delete")[:href]).to eq admin_app.blog_path(Blog.last.id)
       end
     end
   end
 
-  describe "delete function", js: true do
+  describe "delete functionality", :js => true do
     it "deletes a blog" do
       within(:css, "table.table") do
         page.click_link("Delete")

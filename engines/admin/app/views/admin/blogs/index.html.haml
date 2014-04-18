@@ -22,3 +22,5 @@
             = link_to "Show", admin_app.blog_path(blog)
             |
             = link_to "Delete", admin_app.blog_path(blog), method: 'delete', remote: true
+            |
+            = link_to "Edit", admin_app.edit_blog_path(blog)

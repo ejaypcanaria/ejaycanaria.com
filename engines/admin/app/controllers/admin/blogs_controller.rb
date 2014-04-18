@@ -10,13 +10,19 @@ module Admin
     end
 
     def create
-      blog = Blog.new blog_params
-      blog.status = "drafted"
-      blog.save!
+      @blog = Blog.new blog_params
+      @blog.status = "drafted"
+      @blog.save!
 
+      flash[:success] = "Blog successfully created."
+      redirect_to admin_app.edit_blog_path(@blog.id)
     rescue ActiveRecord::RecordInvalid => e
-      @error = e
-      render :blog_error, error: e
+      flash[:error] = e.to_s
+      render :new
+    end
+
+    def edit
+      @blog = Blog.find(params[:id])
     end
 
     def show
@@ -35,7 +41,7 @@ module Admin
     private
 
     def blog_params
-      params.require(:blog).permit(:title, :contents,:user_id)
+      params.require(:blog).permit(:title, :contents,:user_id, :status)
     end
 
   end

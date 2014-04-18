@@ -17,7 +17,7 @@ Capybara.register_driver :chrome do |app|
 end
 
 #Capybara.current_driver = :chrome
-Capybara.javascript_driver = :chrome
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   # Include FactoryGirl Syntax on every example
@@ -46,10 +46,13 @@ RSpec.configure do |config|
 
   # Database Cleaner
   config.before(:suite) do
-    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.strategy = :transaction
   end
 
   config.before(:each) do
+    if example.metadata[:js]
+      DatabaseCleaner.strategy = :truncation
+    end
     DatabaseCleaner.start
   end
 
