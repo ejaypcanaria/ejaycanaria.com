@@ -1,10 +1,11 @@
 #blog-main-area
   %h2 Create New Blog
-  = render 'admin/shared/typeahead_tag', tags: @blog.tags
+  = render 'admin/shared/typeahead_tag', tags: @blog.tags, taggable: 'blog'
 
   = simple_form_for @blog, url: {action: :create}, html: {role: 'form'} do |f|
+    #tags-input-wrapper.hidden
+    #new-tags-input-wrapper.hidden
     = f.hidden_field :user_id, value: @blog.user_id
-    #tags-input.hidden
     = f.input :title
     = f.input :contents, input_html: {rows: "15"}
     = f.button :submit, "Save Draft", class: "btn btn-default"
