@@ -29,7 +29,7 @@ module Admin
     def update
       @blog = Blog.find(params[:id])
       @blog.assign_attributes blog_params
-
+      logger.debug @blog.attributes
       @blog.status = 'published' if params[:commit] == 'Save & Publish'
       @blog.status = 'hidden' if params[:commit] == 'Save & Hide'
 
@@ -55,7 +55,7 @@ module Admin
     private
 
     def blog_params
-      params.require(:blog).permit(:title, :contents,:user_id, :status, :tag_ids => [])
+      params.require(:blog).permit(:title, :contents,:user_id, :status, :tag_ids => [], :tags_attributes => [:name])
     end
 
   end
