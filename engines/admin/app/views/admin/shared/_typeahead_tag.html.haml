@@ -1,6 +1,5 @@
-#typeahead-container
+#typeahead-tag-container
   #tags
 
   = hidden_field_tag :get_all_tag_url, "#{admin_app.get_all_tags_path}"
   = text_field_tag :tag_suggest, nil, class: 'typeahead form-control', placeholder: 'Add Tag'
-  = button_tag "Add", class: 'btn btn-default'
