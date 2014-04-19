@@ -1,4 +1,5 @@
 #blog-main-area
+  = render 'admin/shared/typeahead_tag', tags: @blog.tags
   #blog-status
     %span.label.label-info
       = @blog.status.capitalize

@@ -1,5 +1,11 @@
 #typeahead-tag-container
   #tags
+    - tags.each do |tag|
+      .span.label.label-info= tag.name
 
-  = hidden_field_tag :get_all_tag_url, "#{admin_app.get_all_tags_path}"
-  = text_field_tag :tag_suggest, nil, class: 'typeahead form-control', placeholder: 'Add Tag'
+  #add-tag-input.hidden
+    = hidden_field_tag :get_all_tag_url, "#{admin_app.get_all_tags_path}"
+    = text_field_tag :tag_suggest, nil, class: 'typeahead form-control', placeholder: 'Add Tag'
+    = link_to 'Done', '#', id: 'done-text'
+
+  = link_to 'Add Tag', '#', id: 'add-tag-text'

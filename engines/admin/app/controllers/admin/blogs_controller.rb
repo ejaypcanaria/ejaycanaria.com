@@ -34,8 +34,6 @@ module Admin
       @blog.status = 'hidden' if params[:commit] == 'Save & Hide'
 
       @blog.save!
-
-      logger.debug(@blog.status)
     rescue ActiveRecord::RecordInvalid => e
       @error = e
       render :blog_error
@@ -57,7 +55,7 @@ module Admin
     private
 
     def blog_params
-      params.require(:blog).permit(:title, :contents,:user_id, :status)
+      params.require(:blog).permit(:title, :contents,:user_id, :status, :tag_ids => [])
     end
 
   end

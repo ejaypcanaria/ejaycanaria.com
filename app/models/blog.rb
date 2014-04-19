@@ -15,6 +15,11 @@ class Blog < ActiveRecord::Base
   has_many :model_tags, as: :taggable
   has_many :tags, through: :model_tags
 
+  accepts_nested_attributes_for :tags
+
+  # Accessors
+  attr_accessor :tag_attributes
+
   private
   def titleize_title
     self.title = self.title.titleize
