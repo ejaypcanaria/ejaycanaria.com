@@ -7,8 +7,8 @@
   = hidden_field_tag :taggable, "#{taggable}"
   #add-tag-input-wrapper.hidden
     #message-wrapper
-    = text_field_tag :tag_suggest, nil, class: 'typeahead form-control', placeholder: 'Add Tag'
+    = label_tag :tag_suggest, 'Tag Name:'
+    = text_field_tag :tag_suggest, nil, class: 'typeahead form-control'
     = link_to 'Done', '#', id: 'done-text'
-
 
   = link_to 'Add Tag', '#', id: 'add-tag-text'
