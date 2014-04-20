@@ -29,7 +29,6 @@ module Admin
     def update
       @blog = Blog.find(params[:id])
       @blog.assign_attributes blog_params
-      logger.debug @blog.attributes
       @blog.status = 'published' if params[:commit] == 'Save & Publish'
       @blog.status = 'hidden' if params[:commit] == 'Save & Hide'
 
