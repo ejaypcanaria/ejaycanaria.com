@@ -1,9 +1,9 @@
 #blog-notification
 #blog-header
   %h1 Blog
+  = link_to admin_app.new_blog_path do
+    .new-model
+      .glyphicon.glyphicon-file
+      New
   %hr/
 
-  %nav
-    %ul
-      %li
-        = link_to "Create", admin_app.new_blog_path

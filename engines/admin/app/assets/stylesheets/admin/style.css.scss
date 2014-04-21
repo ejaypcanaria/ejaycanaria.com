@@ -5,11 +5,18 @@
     padding: 0;
 }
 
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 .main-area {
-    padding: 20px;
+    padding: 50px;
+    margin-left: 220px;
 }
 
 .reset-container { padding: 0; margin: 0; width: 100%;}
+
 p.notice, p.alert {
     border-radius: 0;
     padding: 20px;
@@ -28,9 +35,7 @@ p.notice {
     color: #16A085;
 }
 
-nav.left-nav {
-    border-right: 1px solid #EEE;
-    height: 100%;
-    position: fixed;
-    padding: 20px;
+.new-model {
+    font-size: 1.2em;
+    color: #2C3E50;
 }

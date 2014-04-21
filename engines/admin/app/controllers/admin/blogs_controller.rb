@@ -2,7 +2,7 @@ module Admin
   class BlogsController < ApplicationController
 
     def index
-      @blogs = Blog.all
+      @blogs = Blog.all.map{|b| BlogPresenter.new(b)}
     end
 
     def new

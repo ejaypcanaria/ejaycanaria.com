@@ -1,7 +1,23 @@
-%nav.left-nav
-  %h3= current_user.name
-  = link_to('Logout', main_app.destroy_user_session_path, :method => :delete)
+.user-info
+  %h1= current_user.name
 
+%nav.left-nav
   %ul
     %li
-      = link_to "Blog", admin_app.blogs_path
+      = link_to admin_app.root_path do
+        %span.glyphicon.glyphicon-home
+        Home
+    %li
+      = link_to admin_app.blogs_path do
+        %span.glyphicon.glyphicon-book
+        Blog
+    %li
+      = link_to "#" do
+        %span.glyphicon.glyphicon-tags
+        Tag
+    %li
+      = link_to main_app.destroy_user_session_path, :method => :delete do
+        %span.glyphicon.glyphicon-log-out
+        Logout
+
+

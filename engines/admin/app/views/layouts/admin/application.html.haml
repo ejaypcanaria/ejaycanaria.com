@@ -7,9 +7,11 @@
     = csrf_meta_tags
 
   %body
-    .container-fluid.reset-container{style: ""}
+    .container-fluid.reset-container
       .row-fluid
-        .col-xs-12-fluid
+        .col-xs-2.side-bar
+          = render 'layout_partials/application/side_bar'
+        .col-xs-10.main-area
           - if alert
             %p.alert.bg-warning= alert
           - if notice
@@ -18,9 +20,5 @@
             %p.notice.bg-success= flash[:success]
           - if flash[:error]
             %p.alert.bg-warning= flash[:error]
-      .row-fluid
-        .col-xs-2
-          = render 'layout_partials/application/side_bar'
-        .col-xs-10
           = render 'header'
           = yield

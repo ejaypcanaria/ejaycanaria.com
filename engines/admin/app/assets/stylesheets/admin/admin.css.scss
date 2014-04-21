@@ -6,3 +6,51 @@
     padding: 30px;
     border-radius: 10px;
 }
+
+.side-bar {
+    margin: 0;
+    padding: 0;
+    position: fixed !important;
+}
+
+.user-info {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.user-info h1 {
+    font-size: 2em;
+    margin: 0;
+    font-family: Georgia;
+    color: #22313F;
+}
+
+.left-nav ul {
+    font-family: Georgia;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    list-style-type: none;
+}
+
+.left-nav ul li a {
+    display: block;
+    background-color: #EEE;
+    margin-bottom: 5px;
+    padding: 5px 20px;
+    border-radius: 2px;
+    color: #34495E;
+}
+
+.left-nav ul li a:hover {
+    text-decoration: none;
+    background-color: #2C3E50;
+    color: #EEE;
+}
+
+.left-nav .glyphicon {
+    margin-left: -5px;
+    margin-right: 10px;
+}

@@ -1,0 +1,15 @@
+.blog-entry
+  %h1= blog.title
+  .created-at= blog.created_at
+
+  .contents= blog.shortened_contents
+
+  %footer
+    = blog.status
+    .actions
+      = link_to admin_app.blog_path(blog.id) do
+        .glyphicon.glyphicon-eye-open.icon
+      = link_to admin_app.edit_blog_path(blog.id) do
+        .glyphicon.glyphicon-edit.icon
+      = link_to admin_app.blog_path(blog), method: 'delete', remote: true, data:{confirm: 'Are you sure?'} do
+        .glyphicon.glyphicon-trash.icon

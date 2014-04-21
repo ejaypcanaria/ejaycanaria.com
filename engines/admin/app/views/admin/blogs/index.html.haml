@@ -1,26 +1,3 @@
 #blog-main-area
-  %table.table.table-striped.table-hover
-    %thead
-      %tr
-        %th Title
-        %th Permalink
-        %th Contents
-        %th Status
-        %th Created At
-        %th Author
-        %th Action
-    %tbody
-      - @blogs.each do |blog|
-        %tr{id: "blog-#{blog.id}"}
-          %td= blog.title
-          %td= blog.permalink
-          %td= blog.contents.html_safe
-          %td= blog.status
-          %td= blog.created_at
-          %td= blog.author.name
-          %td
-            = link_to "Show", admin_app.blog_path(blog)
-            |
-            = link_to "Delete", admin_app.blog_path(blog), method: 'delete', remote: true, data:{confirm: 'Are you sure?'}
-            |
-            = link_to "Edit", admin_app.edit_blog_path(blog)
+  - @blogs.each do |blog|
+    =render 'blog_entry', blog: blog
