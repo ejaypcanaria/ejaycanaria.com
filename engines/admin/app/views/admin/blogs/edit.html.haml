@@ -8,7 +8,10 @@
     = render 'admin/shared/typeahead_tag_form_wrappers'
     = f.hidden_field :user_id, value: @blog.user_id
     = f.input :title, input_html: {tabindex: 1}
-    = f.input :contents, input_html: {rows: "15", tabindex: 2}
+    = f.input :contents, input_html: {rows: "15", tabindex: 2, id: 'blog-editor'}
     = f.button :submit, "Save", class: "btn btn-default", :'data-disable-with' => 'Saving...', tabindex: 3
     = f.button :submit, "Save & Publish", class: "btn btn-success", :'data-disable-with' => 'Saving...', tabindex: 4
     = f.button :submit, "Save & Hide", class: "btn btn-primary", :'data-disable-with' => 'Saving...', tabindex: 5
+
+  %script
+    CKEDITOR.replace('blog-editor');

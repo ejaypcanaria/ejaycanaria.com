@@ -6,5 +6,8 @@
     = render 'admin/shared/typeahead_tag_form_wrappers'
     = f.hidden_field :user_id, value: @blog.user_id
     = f.input :title, input_html: {tabindex: 1}
-    = f.input :contents, input_html: {rows: "15", tabindex: 2}
+    = f.input :contents, input_html: {rows: "15", tabindex: 2, id: 'blog-editor'}
     = f.button :submit, "Save Draft", class: "btn btn-default", tabindex: 3
+
+  = enable_ckeditor('blog-editor')
+

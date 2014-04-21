@@ -14,7 +14,7 @@
         %tr{id: "blog-#{blog.id}"}
           %td= blog.title
           %td= blog.permalink
-          %td= blog.contents
+          %td= blog.contents.html_safe
           %td= blog.status
           %td= blog.created_at
           %td= blog.author.name

@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require typeahead
 //= require typeahead_tag
+//= require ckeditor/ckeditor
 //= require_tree .
