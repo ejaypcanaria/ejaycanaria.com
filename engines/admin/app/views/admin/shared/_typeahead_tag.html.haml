@@ -1,10 +1,11 @@
 #typeahead-tag-container
   #tags-wrapper
     - tags.each do |tag|
-      .span.label.label-info.hidden.existing-tag= tag.name
+      .existing-tag.hidden= tag.name
 
   = hidden_field_tag :get_all_tag_url, "#{admin_app.get_all_tags_path}"
   = hidden_field_tag :taggable, "#{taggable}"
+
   #add-tag-input-wrapper.hidden
     #message-wrapper
     = label_tag :tag_suggest, 'Tag Name:'
