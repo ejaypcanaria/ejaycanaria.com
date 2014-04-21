@@ -35,6 +35,7 @@ gem 'haml', '>= 3.0.0'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'ckeditor_rails'
 
 group :development, :test do
   gem 'rspec-rails', '>= 2.0.1'

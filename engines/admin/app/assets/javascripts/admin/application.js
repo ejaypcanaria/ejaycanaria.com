@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ckeditor-jquery
 //= require typeahead
 //= require typeahead_tag
+//= require prism
 //= require_tree .
