@@ -27,15 +27,24 @@ class Blog < ActiveRecord::Base
     post_append = "-#{count+1}" if count > 1
     temp_permalink = "#{self.title.parameterize}#{post_append}"
 
-    self.permalink = unique_permalink(temp_permalink, count)
+    self.permalink = determine_unique_permalink(temp_permalink, count)
   end
 
-  def unique_permalink(permalink, last_count)
-    found = Blog.where(permalink: permalink).pluck(:permalink).size > 0
-    if found
-      "#{self.title.parameterize}-#{last_count + 1}"
+  def determine_unique_permalink(permalink, last_count)
+    existing_permalink = Blog.where(permalink: permalink).pluck(:permalink).first
+    if existing_permalink
+      "#{self.title.parameterize}-#{generate_permalink_appender(existing_permalink)}"
     else
       permalink
+    end
+  end
+
+  def generate_permalink_appender(permalink)
+    count = Integer(permalink.last) rescue nil
+    if count
+      count + 1
+    else
+      2
     end
   end
 

@@ -5,6 +5,6 @@
   = simple_form_for @blog, url: {action: :create}, html: {role: 'form'} do |f|
     = render 'admin/shared/typeahead_tag_form_wrappers'
     = f.hidden_field :user_id, value: @blog.user_id
-    = f.input :title
-    = f.input :contents, input_html: {rows: "15"}
-    = f.button :submit, "Save Draft", class: "btn btn-default"
+    = f.input :title, input_html: {tabindex: 1}
+    = f.input :contents, input_html: {rows: "15", tabindex: 2}
+    = f.button :submit, "Save Draft", class: "btn btn-default", tabindex: 3
