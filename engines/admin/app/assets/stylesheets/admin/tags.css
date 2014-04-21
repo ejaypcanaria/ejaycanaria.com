@@ -1,0 +1,19 @@
+.tag {
+  padding: 2px 10px;
+  display: inline-block;
+  background-color: #CCC;
+  border-radius: 5px;
+  margin: 0 2px;
+}
+
+.tag-close-btn {
+  display: inline;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.tag-close-btn:hover {
+  cursor: pointer;
+}
+
+

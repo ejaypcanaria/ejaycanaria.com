@@ -12,6 +12,11 @@ class Blog < ActiveRecord::Base
   # Associations
   belongs_to :author, class_name: "User", foreign_key: "user_id"
 
+  has_many :model_tags, as: :taggable
+  has_many :tags, through: :model_tags
+
+  accepts_nested_attributes_for :tags
+
   private
   def titleize_title
     self.title = self.title.titleize

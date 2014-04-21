@@ -10,6 +10,7 @@ module Admin
     end
 
     def create
+      logger.debug "#{params}"
       @blog = Blog.new blog_params
       @blog.status = "drafted"
       @blog.save!
@@ -28,13 +29,10 @@ module Admin
     def update
       @blog = Blog.find(params[:id])
       @blog.assign_attributes blog_params
-
       @blog.status = 'published' if params[:commit] == 'Save & Publish'
       @blog.status = 'hidden' if params[:commit] == 'Save & Hide'
 
       @blog.save!
-
-      logger.debug(@blog.status)
     rescue ActiveRecord::RecordInvalid => e
       @error = e
       render :blog_error
@@ -56,7 +54,7 @@ module Admin
     private
 
     def blog_params
-      params.require(:blog).permit(:title, :contents,:user_id, :status)
+      params.require(:blog).permit(:title, :contents,:user_id, :status, :tag_ids => [], :tags_attributes => [:name])
     end
 
   end
