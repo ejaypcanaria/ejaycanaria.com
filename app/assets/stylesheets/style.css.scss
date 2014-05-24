@@ -1,141 +1,15 @@
 @import 'bootstrap';
 
-/*----------- CONSTANTS -------------*/
-$header-color: #333;
-$header-height: 60px;
-$header-logo-widht: 60px;
-
-$footer-height: 40px;
-
-$font-color-main: #777;
-
-$font-color-header: #716659;
-$font-color-subheader: #C2B49A;
-
-$font-color-link-hover: #47413A;
-$font-color-link: #716659;
-
-
-/*---------- HTML -----------*/
-html, body, .content-wrapper {
+html, body {
     margin: 0;
     padding: 0;
-    color: $font-color-main;
+    height: 100%;
 }
 
 html, body {
     height: 100%;
 }
 
-/*--------- CLASSES and IDs ---------*/
-
-//HEADER
-.header {
-    background-color: $header-color;
-    height: $header-height;
-    border-radius: 0;
-    border: 0;
-    z-index: 999;
-}
-
-.header a {
-    text-decoration: none;
-    font-family: "Century Gothic", Helvetica, Arial, sans-serif;
-}
-
-.header a:hover {
-    text-decoration: none;
-}
-
-.header-logo {
-    display: block;
-    width: $header-logo-widht;
-    height: $header-height;
-    line-height: $header-height;
-    position: absolute;
-    left: 50%;
-    margin-left: -40px;
-    text-align: center;
-    background-color: $header-color;
-}
-
-#header-nav ul {
-    margin-top: 70px;
-}
-
-#header-nav a.header-btn {
-    text-align: center;
-    color: $font-color-link;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-bottom: 2px #FFF solid;
-    border-top: 2px #FFF solid;
-}
-
-#header-nav a.header-btn:hover {
-    background: none;
-    color: $font-color-link-hover;
-    border-bottom-color: $font-color-header;
-    border-top-color: $font-color-header;
-}
-
-#header-nav a.header-btn:active {
-    position: relative;
-    top: 1px;
-}
-
-.header-link:hover {
-    background-color: #222;
-    cursor: pointer;
-}
-
-.header-link:active {
-    background-color: #1A1A1A;
-    cursor: pointer;
-}
-
-//CONTENT WRAPPER
-.content-wrapper {
-    margin: 0 auto;
-    margin-top: 15px;
-    margin-bottom: $footer-height + 20px;
-    text-align: center;
-}
-
-.content-wrapper h1 {
-    color: $font-color-header;
-    font-size: 3em;
-    text-transform: capitalize;
-}
-
-.content-wrapper > .brief-description {
-    font-family: "Palatino Linotype",Palatino,Palladio,"URW Palladio L","Book Antiqua",Baskerville,"Bookman Old Style","Bitstream Charter","Nimbus Roman No9 L",Garamond,"Apple Garamond","ITC Garamond Narrow","New Century Schoolbook","Century Schoolbook","Century Schoolbook L",Georgia,serif;
-    font-size: 1.5em;
-    color: $font-color-subheader;
-}
-
-//FOOTER
-.footer {
-    height: $footer-height;
-    background-color: #FFF;
-    border: none;
-}
-
-.nav-footer {
-    line-height: $footer-height / 2;
-    text-align: center;
-}
-
-.nav-footer li {
-    display: inline-block;
-}
-
-.nav-footer a {
-    color: #888;
-    font-size: 12px;
-}
-
-ul.nav-footer a:hover {
-    background: none;
-    color: #333;
+.container-fluid {
+    height: 100%;
 }

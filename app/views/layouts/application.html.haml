@@ -13,11 +13,6 @@
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' }/
 
   %body
-    .container.no-padding
-      = #render 'layout_partials/application/header'
-      .row
-        .col-xs-12.mt50
-          .container
-            .content-wrapper
-              = yield
-      = #render 'layout_partials/application/footer'
+    .container-fluid.no-padding
+      = yield
+

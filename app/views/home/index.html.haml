@@ -1,7 +1,10 @@
-- content_for :title, "Hi, I'm Ejay Canaria and this is my website."
+- content_for :title, "Welcome"
 
 .home-wrapper
-  = image_tag 'ejay-circle-medium.png', width: '120', alt: 'Ejay Image'
-  %h1 Ejay Canaria
-  .under-construction Site Under Construction
+  .row-fluid
+    .col-xs-12
+      .content
+        %img{src: "#{asset_path 'ejay-logo-large.png'}", class: 'logo', width: '75'}
+        .name Ejay Canaria
+        .short-bio Curiosity Follower, Programmer
 
